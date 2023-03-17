@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "to-do-list-15fd2": {
+      "hosting": {
+        "to-do-list": [
+          "to-do-list-15fd2"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "to-do-list-15fd2"
+  }
+}

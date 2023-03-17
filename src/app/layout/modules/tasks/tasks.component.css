@@ -1,0 +1,146 @@
+.task-wrapper {
+    border: none;
+}
+
+.create-btn {
+    background-color: #575E94; 
+    color: #ffffff; 
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.create-btn:hover {
+    transform: scale(1.03);
+    background-color: #3b4380; 
+}
+
+.task-title {
+    color: #575E94;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.task-wrapper-body {
+    padding: 30px;
+}
+
+.tasks-content-wrapper {
+    height: 100%;
+    min-height: 100vh;
+    /* overflow-y: auto;
+    overflow-x: hidden; */
+}
+
+ /* --------------- Task Card Design ------------------- */
+
+.task-card {
+    box-shadow: 0 0.1rem 1rem 0.25rem #d0dcef !important;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.task-card:hover {
+    transform: scale(1.02);
+}
+
+.action-icon:hover {
+    transform: scale(1.04);
+}
+
+.top-part {
+    height: 150px;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+    border-bottom: 1px solid #d0dcef;
+}
+
+.category-name-wrapper {
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: 400;
+    border: 1px solid #d0dcef;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.bottom-part {
+    background-color: #ffffff;
+    border-radius: 0 0 15px 15px;
+}
+
+.circle-part {
+    height: 120px;
+    width: 76%;
+    border-radius: 15px 0 100% 0;
+}
+
+.status-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 83%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    font-size: 11px;
+    font-weight: 800;
+    min-width: 100px;
+    left: calc(100% - 103px);
+    border-radius: 0 15px 0 15px;
+}
+
+.task-icon {
+    position: absolute;
+    top: 50%;
+    left: 12%;
+}
+
+.date-id-wrapper {
+    position: absolute;
+    top: 10%;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .task-card {
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    .task-card-col {
+        margin-bottom: 50px;
+    }
+}
+
+@media only screen and (max-width: 1199px) {
+    .task-card-col {
+        margin-bottom: 25px;
+    }
+}
+
+.no-task-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.no-task-img {
+    text-align: center;
+    margin-top: 20px;
+    width: 35vw;
+    min-width: 200px;
+}
+
+.no-task-title {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+    color: royalblue;
+    margin-bottom: 15px;
+}

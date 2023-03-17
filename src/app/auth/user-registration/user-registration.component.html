@@ -1,0 +1,67 @@
+<div class="d-flex align-items-center justify-content-center h-100 auth-container">
+    <div class="overlay" *ngIf="showSpinner">
+        <div class="center">
+            <mat-progress-spinner diameter=50 mode="indeterminate" color="primary">
+            </mat-progress-spinner>
+        </div>
+    </div>
+    <div class="card shadow auth-card">
+        <div class="card-body">
+            <div class="sign-up-title mb-3">Sign Up</div>
+            <div class="sub-title mb-3">Enter your details to create your account</div>
+            <form [formGroup]="regForm">
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Email</mat-label>
+                            <input matInput type="text" formControlName="email">
+                            <mat-error>Please enter a valid email</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <input matInput [type]="isPasswordTypePassword ? 'password' : 'text'"
+                                formControlName="password" (input)="onChangePassword()" onselectstart="return false"
+                                onpaste="return false;" onCopy="return false" onCut="return false" onDrag="return false"
+                                onDrop="return false">
+                            <mat-icon matSuffix (click)="isPasswordTypePassword = !isPasswordTypePassword"
+                                class="text-light-muted cursor-pointer">
+                                {{ isPasswordTypePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                            <mat-error>Password is required</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Confirm Password</mat-label>
+                            <input matInput [type]="isConfirmPasswordTypePassword ? 'password' : 'text'"
+                                formControlName="confirmPassword" (input)="onChangeConfirmPassword()"
+                                onselectstart="return false" onpaste="return false;" onCopy="return false"
+                                onCut="return false" onDrag="return false" onDrop="return false">
+                            <mat-icon matSuffix class="text-light-muted cursor-pointer"
+                                (click)="isConfirmPasswordTypePassword = !isConfirmPasswordTypePassword">
+                                {{ isConfirmPasswordTypePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                            <mat-error *ngIf="!regForm.get('confirmPassword').valid">Confirm your passsword</mat-error>
+                        </mat-form-field>
+                        <div class="password-not-match" *ngIf="regForm.get('confirmPassword').valid && !passwordMatch">
+                            'Passsword' and 'Confirm Password' didn't match.
+                        </div>
+                    </div>
+                </div>
+                <button class="sign-up-btn" type="submit" (click)="onSubmitRegForm()">Sign Up</button>
+                <div class="d-flex align-items-center justify-content-center mt-3">
+                    <div class="text-light-muted mr-1">
+                        Already Registered?
+                    </div>
+                    <a class="text-primary" routerLink="/auth/login">
+                        Sign in
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

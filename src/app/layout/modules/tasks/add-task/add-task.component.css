@@ -1,0 +1,51 @@
+.close-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close-icon:hover {
+    transform: scale(1.02);
+    color: royalblue;
+}
+
+.task-tile {
+   font-size: 20px; 
+   font-weight: 500;
+   margin-bottom: 20px;
+}
+
+.create-btn {
+    background-color: #575E94; 
+    color: #ffffff; 
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+}
+
+.create-btn:hover {
+    transform: scale(1.03);
+    background-color: #3b4380; 
+}
+
+.cancel-btn {
+    background-color: #ffffff; 
+    color: #575E94; 
+    border: 1px solid #575E94;
+    border-radius: 5px;
+    padding: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cancel-btn:hover {
+    transform: scale(1.03);
+    background-color: #edeffa; 
+}

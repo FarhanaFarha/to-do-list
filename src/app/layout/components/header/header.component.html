@@ -1,0 +1,16 @@
+<div class="header-fixed">
+    <div class="app-title ml-5">To do List</div>
+    <div class="user-wrapper mr-5">
+        <div *ngIf="username" class="user-letter">
+           {{ (username | slice:0:1) }}
+        </div>
+        <div>
+            <div [title]="username" class="username">
+                {{ username &&  username?.length > 20 ?  ( username | slice:0:18 )+'..' : username }}
+            </div>
+            <div (click)="onClickSignOut()" class="sign-out-btn">
+                Sign Out
+            </div>
+        </div>
+    </div>
+</div>

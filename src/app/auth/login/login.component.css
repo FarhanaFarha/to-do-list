@@ -1,0 +1,33 @@
+.sign-in-title {
+    font-size: 25px;
+    text-align: center;
+}
+
+.sub-title {
+    color: #b5b5c3!important;
+    text-align: center;
+}
+
+.auth-card {
+    width: 400px;
+    min-width: fit-content;
+    padding: 20px 5px 20px 5px;
+}
+
+.sign-in-btn {
+    color: #ffffff;
+    background-color: #18153fe6;
+    width: 100%;
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.sign-in-btn:hover {
+    transform: scale(1.02);
+}
+
+.auth-container {
+    background-color: #fff !important;
+}

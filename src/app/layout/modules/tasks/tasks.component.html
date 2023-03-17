@@ -1,0 +1,79 @@
+<div class="container-fluid">
+    <div class="overlay" *ngIf="showSpinner">
+        <div class="center">
+            <mat-progress-spinner diameter=50 mode="indeterminate" color="primary">
+            </mat-progress-spinner>
+        </div>
+     </div>
+    <div class="card task-wrapper shadow">
+        <div class="card-body task-wrapper-body">
+            <div class="d-flex alignitems-center justify-content-between">
+                <div class="task-title">
+                    Tasks
+                </div>
+                <div class="create-btn" (click)="onClickAddTask()">
+                    Add Task
+                </div>
+            </div>
+            <div class="tasks-content-wrapper mt-2">
+                <div class="no-task-wrapper" *ngIf="noTaskFound">
+                    <div>
+                        <div class="no-task-title">No Task Found</div>
+                        <div class="text-muted text-center"> Click on the add button to add your tasks</div>
+                        <img src="../../../../assets/png/no-task-found.png" class="no-task-img">
+                    </div>
+                </div>
+                <div class="row p-4">
+                    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 col-xxl-3 task-card-col"
+                        *ngFor="let task of taskList; let i = index;">
+                        <div class="task-card h-100">
+                            <div class="top-part" [style.backgroundColor]="task?.categoryColor">
+                                <div class="circle-part" [style.backgroundColor]="colorLuminance(task?.categoryColor)">
+                                    <div class="ml-3">
+                                        <div class="date-id-wrapper">
+                                            {{ task?.createdTimestamp | date: 'MMM dd, Y hh:mm a' }}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="status-wrapper">
+                                </div>
+                            </div>
+                            <div class="bottom-part">
+                                <div class="p-4">
+                                    <div class="d-flex align-items-center justify-content-end">
+                                        <img src="assets/svg-icons/edit.svg" height="18" width="18"
+                                            class="cursor-pointer action-icon mr-2" matTooltip="Edit"
+                                            (click)="onClickEditTask(task)">
+                                        <img src="assets/svg-icons/delete.svg" matTooltip="Delete"
+                                            height="18" width="18" class="cursor-pointer action-icon"
+                                            (click)="onClickDeleteTask(task?.id)">
+                                    </div>
+                                    <div class="font-size-h4 font-h mt-2" [title]="task?.title">
+                                        {{ task?.title && task?.title.length > 23 ?
+                                        (task?.title | slice:0:20)+'...' : task?.title }}
+                                    </div>
+                                    <div class="mt-3 mb-3">
+                                        <div class="font-size-sm text-grey" [title]="task?.description">
+                                            {{ task?.description && task?.description.length > 23 ?
+                                            (task?.description | slice:0:20)+'...' : task?.description }}
+                                        </div>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-start font-size-sm mb-2">
+                                        <div class="text-grey mr-2">
+                                            Category:
+                                        </div>
+                                        <div class="category-name-wrapper" 
+                                             [style.backgroundColor]="task.categoryColor">
+                                            {{ task?.categoryName && task?.categoryName.length > 23 ?
+                                                (task?.categoryName | slice:0:20)+'...' : task?.categoryName }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
